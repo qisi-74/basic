@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient(
         name = "feign-service",
         path = "/api/feign"
+//        ,url ="http://127.0.0.1:7081"
 )
 public interface FeignApi {
     @GetMapping("/test")

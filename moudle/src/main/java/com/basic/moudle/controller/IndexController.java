@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
     public Logger logger= LoggerFactory.getLogger(this.getClass());
-//    @Autowired
-//    private FeignApi feignApi;
+    @Autowired
+    private FeignApi feignApi;
     @RequestMapping(value = {"", "/", "/index","/test"})
     public String index() {
-//        String api=feignApi.test("測試微服务");
+        String api=feignApi.test();
         logger.info("访问moudle");
+        logger.info(api);
         return "index";
     }
 }
